@@ -34,7 +34,7 @@ proxy_service:
   # -- (Optional) when using reverse proxy
   public_addr: ['teleport.bookingboost.ch:443']
   https_keypairs: []
-  acme: {}
+  # acme: {}
   # --(Optional) ACME
   # acme:
   #   enabled: "yes"
