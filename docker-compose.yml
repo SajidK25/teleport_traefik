@@ -26,7 +26,8 @@ services:
       traefik.http.routers.teleport.tls.certresolver: "letsEncrypt"
       traefik.http.routers.teleport.tls.options: "modern@file"
       traefik.http.routers.teleport.tls: "true"
-      traefik.http.services.teleport.loadbalancer.server.port: 80
+      traefik.http.services.teleport.loadbalancer.server.port: 3080
+      traefik.http.services.teleport.loadbalancer..server.scheme: https
       traefik.http.services.teleport.loadbalancer.sticky.cookie.httpOnly: "true"
       traefik.http.services.teleport.loadbalancer.sticky.cookie.secure: "true"
     networks:
