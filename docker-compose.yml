@@ -1,4 +1,4 @@
----
+version: "3"
 # -- (Optional) When using Traefik, use this section
 networks:
   traefik-net:
@@ -22,14 +22,12 @@ services:
       traefik.enable: "true"
       traefik.http.routers.teleport.entrypoints: "https"
       traefik.http.routers.teleport.middlewares: "default@file"
-      traefik.http.routers.teleport.rule: "Host(`teleport.bookingboost.ch`)"
+      traefik.http.routers.teleport.rule: "Host(`teleport.bookingboost.ch`)"                              
       traefik.http.routers.teleport.tls.certresolver: "letsEncrypt"
       traefik.http.routers.teleport.tls.options: "modern@file"
       traefik.http.routers.teleport.tls: "true"
       traefik.http.services.teleport.loadbalancer.server.port: 3080
       traefik.http.services.teleport.loadbalancer..server.scheme: https
-      traefik.http.services.teleport.loadbalancer.sticky.cookie.httpOnly: "true"
-      traefik.http.services.teleport.loadbalancer.sticky.cookie.secure: "true"
     networks:
       - traefik-net
     restart: unless-stopped
