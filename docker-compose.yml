@@ -20,10 +20,10 @@ services:
     labels:
       traefik.docker.network: "traefik-net"
       traefik.enable: "true"
-      traefik.http.routers.teleport.entrypoints: "http"
+      traefik.http.routers.teleport.entrypoints: "https"
       traefik.http.routers.teleport.middlewares: "default@file"
       traefik.http.routers.teleport.rule: "HostRegexp(`teleport.bookingboost.ch`,`{subhost:[a-z]+}.teleport.bookingboost.ch`)"                              
-      traefik.http.routers.teleport.tls.certresolver: "production"
+      traefik.http.routers.teleport.tls.certresolver: "letsEncrypt"
       traefik.http.routers.teleport.tls.options: "modern@file"
       traefik.http.routers.teleport.tls: "true"
       traefik.http.services.teleport.loadbalancer.server.port: 3080
